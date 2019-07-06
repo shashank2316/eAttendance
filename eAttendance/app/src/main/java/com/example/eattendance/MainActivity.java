@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    databaseHelper mydb;
     private EditText email;
     private EditText password;
     private TextView info;
@@ -32,12 +32,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validate(email.getText().toString(),password.getText().toString());
-                                     }
-                                 }
-
+            }
+        }
         );
-
-
+        mydb = new databaseHelper(this);
     }
 
     private void validate(String username, String userpassword){
