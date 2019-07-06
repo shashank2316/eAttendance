@@ -26,12 +26,13 @@ public class MainActivity extends AppCompatActivity {
         info = (TextView)findViewById(R.id.tvInfo);
         login = (Button) findViewById(R.id.btnLogin);
 
-        info.setText("No. of attempts remaning:5");
+        info.setText("No. of attempts remaning:3");
 
-        login.setOnClickListener(new View.OnClickListener(){
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validate(email.getText().toString(),password.getText().toString());
+
+                validate(email.getText().toString(), password.getText().toString());
             }
         }
         );
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate(String username, String userpassword){
         if ((username.equals("admin")) && (userpassword.equals("admin"))){
-            Intent intent =new Intent(MainActivity.this , LoginPageActivity.class);
+            Intent intent =new Intent(MainActivity.this , insert.class);
             startActivity(intent);
         }
         else {
